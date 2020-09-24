@@ -48,15 +48,16 @@ t_DOT = r'\.'
 
 constants = ['INTCONST', 'FLOATCONST', 'STRINGCONST', 'NULLCONST']
 
-t_INTCONST = r'[0-9][0-9]*'
-t_FLOATCONST = r'[0-9][0-9]*.[0-9][0-9]*'
-t_STRINGCONST = r'\"[ a-zA-Z_0-9]*\"'
+t_INTCONST = r'[0-9]+'
+t_FLOATCONST = r'[0-9]+.[0-9]+'
+t_STRINGCONST = r'\"([^\\\"]|\\.)*\"'
 t_NULLCONST = r'null'
 
 identifiers = ['ID']
 
 tokens = list(reserved.values()) + operators + specials + constants + identifiers
 
+# Check for id's including reserved words. If it's a reserved word, change it's token type to some of the reserved ones.
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
     t.type = reserved.get(t.value, 'ID') # Check for reserved words
@@ -67,7 +68,10 @@ def t_newline(t):
 	r'\n+'
 	t.lexer.lineno += len(t.value)
 
-# Ignored characters (spaces and tabs)
+# Includes the prefix "ignore_" in the token declaration to force a token to be ignored. For example:
+t_ignore_COMMENT = r'//.*'
+
+# A string containing ignored characters (spaces and tabs)
 t_ignore  = ' \t'
 
 # Error handling rule

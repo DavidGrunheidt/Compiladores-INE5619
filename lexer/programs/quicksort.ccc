@@ -1,0 +1,103 @@
+def testSortInto3Arrays() {
+    int array1 [4];
+    array1 = new int[4];
+    array1[0] = 5;
+    array1[1] = 4;
+    array1[2] = 3;
+    array1[3] = 2;
+
+    quickSort(array1, 0, array1.length - 1);
+
+    print array1;
+
+    int array2 [8];
+    array2 = new int[8];
+    array2[0] = 23;
+    array2[1] = 53;
+    array2[2] = 72;
+    array2[3] = 109;
+    array2[4] = 13;
+    array2[5] = 9;
+    array2[6] = 2;
+    array2[7] = 213;
+
+    quickSort(array2, 0, array2.length - 1);
+
+    print array2;
+
+    int array3 [6];
+
+    array3 = new int[5];
+    array3[0] = 45;
+    array3[1] = 23;
+    array3[2] = 12;
+    array3[3] = 964;
+    array3[4] = 3;
+    array3[5] = 124;
+
+    quickSort(array3, 0, array3.length - 1);
+
+    print array3;
+}
+
+def quickSort(int[] array, int low, int high) {
+        // check for empty or null array
+        if (myArray == null){
+            if (myArray.length == 0) {
+                return;
+            }
+        }
+         
+        if (low >= high){
+            return;
+        }
+ 
+        // Get the pivot element from the middle of the list
+        int middle;
+        middle = low + (high - low) / 2;
+
+        int pivot;
+        pivot = arr[middle];
+ 
+        int dummy;
+
+        // make left < pivot and right > pivot
+        int j;
+        j = high;
+        
+        int i;
+        i = low;
+        for(dummy = 1; i <= j; dummy = 1) {
+            // Check until all values on left side array are lower than pivot
+            for (dummy = 1; myArray[i] < pivot; dummy = 1) {
+                i = i + 1;
+            }
+
+            // Check until all values on left side array are greater than pivot
+            for (dummy = 1; myArray[j] > pivot; dummy = 1) {
+                j = j - 1;
+            }
+
+            // Now compare values from both side of lists to see if they need swapping 
+            // After swapping move the iterator on both lists
+            if (i <= j) {
+                swap(myArray, i, j);
+                i = i + 1;
+                j = j - 1;
+            }
+        }
+
+        // Do same operation as above recursively to sort two sub arrays
+        if (low < j){
+            quickSort(arr, low, j);
+        }
+        if (high > i){
+            quickSort(arr, i, high);
+        }
+}
+
+def swap (int[] array, int x, int y) {
+    int temp = array[x];
+    array[x] = array[y];
+    array[y] = temp;
+}
