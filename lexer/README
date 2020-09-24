@@ -1,0 +1,34 @@
+
+Os programas estão localizados em ./programs
+A saida do analisador léxico será salvo em ./outputs com o nome do programa correspondente.
+
+Caso ocorra um erro léxico, será mostrado no arquivo de saida da seguinte maneira:
+Illegal character X at line Y and column Z.
+
+Então, para procurar por erros léxicos basta buscar "Illegal character" nos arquivos de saida.
+
+Um Token reconhecido tem a seguinte estrutura:
+LexToken(NOME_DO_TOKEN,'PALAVRA_QUE_DEU_MATCH', linha, coluna)
+
+A tabela de simbolos está no final do arquivo de saida e contem a seguinte estrutura:
+{'nome_do_simbolo': {'linha': X, 'coluna': Y}}
+
+*Obrigatorio* -> Para instalar a biblioteca PLY:
+
+	make install
+
+Para analisar o programa quicksort:
+
+	make quicksort
+
+Para analisar o programa mergesort:
+
+	make mergesort
+
+Para analisar o programa phonetic:
+
+	make phonetic
+
+Para analisar todos os programas:
+
+	make all

@@ -1,0 +1,101 @@
+// https://howtodoinjava.com/algorithm/implement-phonetic-search-using-soundex-algorithm/
+testGetCode();
+
+def testGetCode() {
+    String name1;
+    name1 = "beer";
+
+    String name2;
+    name2 = "bear";
+
+    String name3;
+    name3 = "bearer";
+         
+    print getGode(name1);
+    print getGode(name2);
+    print getGode(name3);
+}
+
+def getCode(string s) {
+    string x;
+    x = s.toUpperCase();
+
+    string firstLetter;
+    firstLetter = = x[0];
+
+    //RULE [ 2 ]
+    //Convert letters to numeric code
+    int i;
+    for (i = 0; i < x.length; i = i + 1) {
+        if (x[i] == "B") {
+            x[i] = "1";
+        } else if (x[i] == "F") {
+            x[i] = "1";
+        } else if (x[i] == "P") {
+            x[i] = "1";
+        } else if (x[i] == "V") {
+            x[i] = "1";
+        } 
+
+        else if (x[i] == "C") {
+            x[i] = "2";
+        } else if (x[i] == "G") {
+            x[i] = "2";
+        } else if (x[i] == "J") {
+            x[i] = "2";
+        } else if (x[i] == "K") {
+            x[i] = "2";
+        } else if (x[i] == "Q") {
+            x[i] = "2";
+        } else if (x[i] == "S") {
+            x[i] = "2";
+        } else if (x[i] == "X") {
+            x[i] = "2";
+        } else if (x[i] == "Z") {
+            x[i] = "2";
+        } 
+
+        else if (x[i] == "D") {
+            x[i] = "3";
+        } else if (x[i] == "T") {
+            x[i] = "3";
+        }
+
+        else if (x[i] == "L") {
+            x[i] = "4";
+        }
+
+        else if (x[i] == "M") {
+            x[i] = "5";
+        } else if (x[i] == "N") {
+            x[i] = "5";
+        }
+
+        else if (x[i] == "R") {
+            x[i] = "6";
+        }
+
+        else {
+            x[i] = "0";
+        }
+    }
+
+    //Remove duplicates
+    //RULE [ 1 ]
+    string output;
+    output = "" + firstLetter;
+     
+    //RULE [ 3 ]
+    for(i = 0; i < x.length; i = i + 1) {
+        if (x[i] != x[i - 1]) {
+            if (x[i] != "0") {
+                output = output + x[i];
+            }
+        }
+    }
+
+    //RULE [ 4 ]
+    //Pad with 0's or truncate
+    output = output + "0000";
+    return output.substring(0, 4);
+}

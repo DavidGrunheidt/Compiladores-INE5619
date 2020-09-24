@@ -60,7 +60,12 @@ tokens = list(reserved.values()) + operators + specials + constants + identifier
 # Check for id's including reserved words. If it's a reserved word, change it's token type to some of the reserved ones.
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
-    t.type = reserved.get(t.value, 'ID') # Check for reserved words
+    t.type = reserved.get(t.value, 'ID')
+
+    if t.type == 'ID' and t.value not in t.lexer.symbol_table:
+    	t.lexer.symbol_table[t.value] = {"linha": t.lineno, "coluna": t.lexpos}
+
+     # Check for reserved words
     return t
 
 # Define a rule so we can track line numbers
@@ -76,5 +81,5 @@ t_ignore  = ' \t'
 
 # Error handling rule
 def t_error(t):
-	print("Illegal character '%s'" % t.value[0])
+	print("Illegal character " + str(t.value[0]) + " at line "+ str(t.lineno) + " and column " + str(t.lexpos))
 	t.lexer.skip(1)

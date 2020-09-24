@@ -1,4 +1,7 @@
-def testSortInto3Arrays() {
+// https://howtodoinjava.com/algorithm/quicksort-java-example/
+testSortOn3Arrays();
+
+def testSortOn3Arrays() {
     int array1 [4];
     array1 = new int[4];
     array1[0] = 5;
@@ -40,7 +43,7 @@ def testSortInto3Arrays() {
     print array3;
 }
 
-def quickSort(int[] array, int low, int high) {
+def quickSort(int array[], int low, int high) {
         // check for empty or null array
         if (myArray == null){
             if (myArray.length == 0) {
@@ -96,7 +99,7 @@ def quickSort(int[] array, int low, int high) {
         }
 }
 
-def swap (int[] array, int x, int y) {
+def swap (int array[], int x, int y) {
     int temp = array[x];
     array[x] = array[y];
     array[y] = temp;

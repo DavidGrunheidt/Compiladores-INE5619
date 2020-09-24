@@ -14,6 +14,7 @@ file.close()
 
 # Build the lexer
 lexer = lex.lex(module=tokrules)
+lexer.symbol_table = dict()
 
 # Give the lexer some input
 lexer.input(code)
@@ -21,3 +22,6 @@ lexer.input(code)
 # Tokenize
 for tok in lexer:
      print(tok)
+
+print("\nSymbol table:\n")
+print(lexer.symbol_table)
