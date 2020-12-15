@@ -1,8 +1,6 @@
 // https://howtodoinjava.com/algorithm/quicksort-java-example/
-testSortOn3Arrays();
-
-def testSortOn3Arrays() {
-    int array1 [4];
+def funcTestSortOn3Arrays(int someParam) {
+    int array1[4];
     array1 = new int[4];
     array1[0] = 5;
     array1[1] = 4;

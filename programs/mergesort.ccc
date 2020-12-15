@@ -1,7 +1,5 @@
 //https://howtodoinjava.com/algorithm/merge-sort-java-example/
-testSortOn2Arrays();
-
-def testSortOn2Arrays() {
+def funcTestSortOn2Arrays() {
     float array1 [6];
     array1 = new float[8];
     array1[0] = 45;
@@ -11,7 +9,7 @@ def testSortOn2Arrays() {
     array1[4] = 3;
     array1[5] = 124;
 
-    mergeSort(array1);
+    funcMergeSort(array1);
 
     print array1;
 
@@ -26,12 +24,12 @@ def testSortOn2Arrays() {
     array2[6] = 2;
     array2[7] = 213; 
 
-    mergeSort(array2);
+    funcMergeSort(array2);
 
     print array2;
 }
  
-def mergeSort(float list[]) {
+def funcMergeSort(float list[]) {
 	//If list is empty; no need to do anything
 	if (list.length <= 1) {
 		return list;
@@ -55,15 +53,15 @@ def mergeSort(float list[]) {
     }
 	         
 	//Sort each half recursively
-	mergeSort(first);
-	mergeSort(second);
+	funcMergeSort(first);
+	funcMergeSort(second);
 	         
 	//Merge both halves together, overwriting to original array
-	merge(first, second, list);
+	funcMerge(first, second, list);
 	return list;
 }
      
-def merge(float first[], float second[], float result[]) {
+def funcMerge(float first[], float second[], float result[]) {
     //Index Position in first array - starting with first element
     int iFirst;
     iFirst = 0;

@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="78829286-242d-4ac6-bbbc-ef3136aeb264" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/non_terminals_enum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terminals_enum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RelatorioAtv1DavidOrdine.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexer/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexer/lexer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexer/makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexer/outputs/mergesort.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexer/outputs/phonetic.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexer/outputs/quicksort.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexer/programs/mergesort.ccc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexer/programs/phonetic.ccc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexer/programs/quicksort.ccc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexer/tokrules.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,10 +81,56 @@
       <workItem from="1600894758403" duration="25000" />
       <workItem from="1600984308302" duration="969000" />
       <workItem from="1601037576986" duration="405000" />
+      <workItem from="1601475815369" duration="63000" />
+      <workItem from="1603158767088" duration="287000" />
+      <workItem from="1604022121739" duration="33000" />
+      <workItem from="1604024742268" duration="16000" />
+      <workItem from="1604025106870" duration="21001000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="192" y="111" key="DiffContextDialog" timestamp="1604072056012">
+      <screen x="0" y="23" width="1920" height="988" />
+    </state>
+    <state x="192" y="111" key="DiffContextDialog/0.23.1920.988/1920.23.1920.1057@0.23.1920.988" timestamp="1604072056012" />
+    <state x="695" y="161" key="RollbackChangesDialog" timestamp="1604072057052">
+      <screen x="0" y="23" width="1920" height="988" />
+    </state>
+    <state x="695" y="161" key="RollbackChangesDialog/0.23.1920.988/1920.23.1920.1057@0.23.1920.988" timestamp="1604072057052" />
+    <state x="2313" y="23" width="1527" height="969" key="dock-window-1" timestamp="1604028700638">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2313" y="23" width="1527" height="969" key="dock-window-1/0.23.1920.988/1920.23.1920.1057@0.23.1920.988" timestamp="1604028700638" />
+    <state x="2880" y="23" width="960" height="1057" key="dock-window-2" timestamp="1604029010456">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2880" y="23" width="960" height="1057" key="dock-window-2/0.23.1920.988/1920.23.1920.1057@0.23.1920.988" timestamp="1604029010456" />
+    <state x="2076" y="82" width="1527" height="969" key="dock-window-3" timestamp="1604066564355">
+      <screen x="1920" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2076" y="82" width="1527" height="969" key="dock-window-3/0.23.1920.988/1920.23.1920.1057@0.23.1920.988" timestamp="1604066564355" />
+    <state x="668" y="256" width="584" height="522" key="find.popup" timestamp="1604029758268">
+      <screen x="0" y="23" width="1920" height="988" />
+    </state>
+    <state x="668" y="256" width="584" height="522" key="find.popup/0.23.1920.988/1920.23.1920.1057@0.23.1920.988" timestamp="1604029758268" />
+    <state x="625" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1604029206934">
+      <screen x="0" y="23" width="1920" height="988" />
+    </state>
+    <state x="625" y="241" width="670" height="676" key="search.everywhere.popup/0.23.1920.988/1920.23.1920.1057@0.23.1920.988" timestamp="1604029206934" />
   </component>
 </project>

@@ -1,7 +1,5 @@
 // https://howtodoinjava.com/algorithm/implement-phonetic-search-using-soundex-algorithm/
-testGetCode();
-
-def testGetCode() {
+def funcTestGetCode() {
     String name1;
     name1 = "beer";
 
@@ -11,12 +9,12 @@ def testGetCode() {
     String name3;
     name3 = "bearer";
          
-    print getGode(name1);
-    print getGode(name2);
-    print getGode(name3);
+    print funcGetCode(name1);
+    print funcGetCode(name2);
+    print funcGetCode(name3);
 }
 
-def getCode(string s) {
+def funcGetCode(string s) {
     string x;
     x = s.toUpperCase();
 

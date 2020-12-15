@@ -1,0 +1,1 @@
+Erro, entrada PARAMLIST → ) vazia, Token: LexToken(RPAREN,')',2,110) linha 2, coluna 110

@@ -1,0 +1,307 @@
+{
+	'PROGRAM': {
+		'$': ['ε'],
+		'ident': ['STATEMENT'],
+		';': ['STATEMENT'],
+		'for': ['STATEMENT'],
+		'if': ['STATEMENT'],
+		'return': ['STATEMENT'],
+		'read': ['STATEMENT'],
+		'print': ['STATEMENT'],
+		'string': ['STATEMENT'],
+		'float': ['STATEMENT'],
+		'int': ['STATEMENT'],
+		'break': ['STATEMENT'],
+		'{': ['STATEMENT'],
+		'def': ['FUNCLIST']
+	},
+	'FUNCLIST': {
+		'def': ['FUNCDEF', "FUNCLIST'"]
+	},
+	"FUNCLIST'": {
+		'$': ['ε'],
+		'def': ['FUNCLIST']
+	},
+	'FUNCDEF': {
+		'def': ['def', 'ident_func', '(', 'PARAMLIST', ')', '{', 'STATELIST', '}']
+	},
+	'PARAMLIST': {
+		'string': ['VARTYPE', "PARAMLIST'"],
+		'float': ['VARTYPE', "PARAMLIST'"],
+		'int': ['VARTYPE', "PARAMLIST'"]
+	},
+	"PARAMLIST'": {
+		'ident': ['ident', "PARAMLIST''"]
+	},
+	"PARAMLIST''": {
+		')': ['ε'],
+		',': [',', 'PARAMLIST'],
+		'[': ['[', "PARAMLIST'''"]
+	},
+	"PARAMLIST'''": {
+		']': [']', "PARAMLIST''''"]
+	},
+	"PARAMLIST''''": {
+		')': ['ε'],
+		',': [',', 'PARAMLIST']
+	},
+	'STATEMENT': {
+		'ident': ['ATRIBSTAT', ';'],
+		';': [';'],
+		'for': ['FORSTAT'],
+		'if': ['IFSTAT'],
+		'return': ['RETURNSTAT', ';'],
+		'read': ['READSTAT', ';'],
+		'print': ['PRINTSTAT', ';'],
+		'string': ['VARDECL', ';'],
+		'float': ['VARDECL', ';'],
+		'int': ['VARDECL', ';'],
+		'break': ['break', ';'],
+		'{': ['{', 'STATELIST', '}']
+	},
+	'VARTYPE': {
+		'string': ['string'],
+		'float': ['float'],
+		'int': ['int']
+	},
+	'ARRAYSIZE': {
+		'[': ['[', 'int_constant', ']', "ARRAYSIZE'"]
+	},
+	"ARRAYSIZE'": {
+		';': ['ε'],
+		'[': ['ARRAYSIZE']
+	},
+	'ARRAYSIZEEXP': {
+		'[': ['[', 'NUMEXPRESSION', ']', "ARRAYSIZEEXP'"]
+	},
+	"ARRAYSIZEEXP'": {
+		')': ['ε'],
+		'%': ['ε'],
+		'/': ['ε'],
+		'*': ['ε'],
+		'-': ['ε'],
+		'+': ['ε'],
+		'!=': ['ε'],
+		'==': ['ε'],
+		'>=': ['ε'],
+		'<=': ['ε'],
+		'>': ['ε'],
+		'<': ['ε'],
+		';': ['ε'],
+		'=': ['ε'],
+		']': ['ε'],
+		'[': ['ARRAYSIZEEXP']
+	},
+	'VARDECL': {
+		'string': ['VARTYPE', 'ident', "VARDECL'"],
+		'float': ['VARTYPE', 'ident', "VARDECL'"],
+		'int': ['VARTYPE', 'ident', "VARDECL'"]
+	},
+	"VARDECL'": {
+		';': ['ε'],
+		'[': ['ARRAYSIZE']
+	},
+	'ATRIBSTAT': {
+		'ident': ['LVALUE', '=', "ATRIBSTAT'"]
+	},
+	"ATRIBSTAT'": {
+		'ident': ['EXPRESSION'],
+		'(': ['EXPRESSION'],
+		'null': ['EXPRESSION'],
+		'string_constant': ['EXPRESSION'],
+		'float_constant': ['EXPRESSION'],
+		'int_constant': ['EXPRESSION'],
+		'-': ['EXPRESSION'],
+		'+': ['EXPRESSION'],
+		'new': ['ALLOCEXPRESSION'],
+		'ident_func': ['FUNCCALL']
+	},
+	'FUNCCALL': {
+		'ident_func': ['ident_func', '(', 'PARAMLISTCALL', ')']
+	},
+	'PARAMLISTCALL': {
+		'ident': ['ident', "PARAMLISTCALL'"],
+		')': ['ε']
+	},
+	"PARAMLISTCALL'": {
+		')': ['ε'],
+		',': [',', 'PARAMLISTCALL']
+	},
+	'PRINTSTAT': {
+		'print': ['print', 'EXPRESSION']
+	},
+	'READSTAT': {
+		'read': ['read', 'LVALUE']
+	},
+	'RETURNSTAT': {
+		'return': ['return', "RETURNSTAT'"]
+	},
+	"RETURNSTAT'": {
+		'ident': ['ident'],
+		';': ['ε'],
+		'ident_func': ['ident_func']
+	},
+	'IFSTAT': {
+		'if': ['if', '(', 'EXPRESSION', ')', 'STATEMENT', 'else', 'STATEMENT']
+	},
+	'FORSTAT': {
+		'for': ['for', '(', 'ATRIBSTAT', ';', 'EXPRESSION', ';', 'ATRIBSTAT', ')', 'STATEMENT']
+	},
+	'STATELIST': {
+		'ident': ['STATEMENT', "STATELIST'"],
+		';': ['STATEMENT', "STATELIST'"],
+		'for': ['STATEMENT', "STATELIST'"],
+		'if': ['STATEMENT', "STATELIST'"],
+		'return': ['STATEMENT', "STATELIST'"],
+		'read': ['STATEMENT', "STATELIST'"],
+		'print': ['STATEMENT', "STATELIST'"],
+		'string': ['STATEMENT', "STATELIST'"],
+		'float': ['STATEMENT', "STATELIST'"],
+		'int': ['STATEMENT', "STATELIST'"],
+		'break': ['STATEMENT', "STATELIST'"],
+		'{': ['STATEMENT', "STATELIST'"]
+	},
+	"STATELIST'": {
+		'ident': ['STATELIST'],
+		';': ['STATELIST'],
+		'for': ['STATELIST'],
+		'if': ['STATELIST'],
+		'return': ['STATELIST'],
+		'read': ['STATELIST'],
+		'print': ['STATELIST'],
+		'string': ['STATELIST'],
+		'float': ['STATELIST'],
+		'int': ['STATELIST'],
+		'break': ['STATELIST'],
+		'}': ['ε'],
+		'{': ['STATELIST']
+	},
+	'ALLOCEXPRESSION': {
+		'new': ['new', 'VARTYPE', 'ARRAYSIZEEXP']
+	},
+	'LOGICALCOMP': {
+		'!=': ['!='],
+		'==': ['=='],
+		'>=': ['>='],
+		'<=': ['<='],
+		'>': ['>'],
+		'<': ['<']
+	},
+	'EXPRESSION': {
+		'ident': ['NUMEXPRESSION', "EXPRESSION'"],
+		'(': ['NUMEXPRESSION', "EXPRESSION'"],
+		'null': ['NUMEXPRESSION', "EXPRESSION'"],
+		'string_constant': ['NUMEXPRESSION', "EXPRESSION'"],
+		'float_constant': ['NUMEXPRESSION', "EXPRESSION'"],
+		'int_constant': ['NUMEXPRESSION', "EXPRESSION'"],
+		'-': ['NUMEXPRESSION', "EXPRESSION'"],
+		'+': ['NUMEXPRESSION', "EXPRESSION'"]
+	},
+	"EXPRESSION'": {
+		')': ['ε'],
+		'!=': ['LOGICALCOMP', 'NUMEXPRESSION'],
+		'==': ['LOGICALCOMP', 'NUMEXPRESSION'],
+		'>=': ['LOGICALCOMP', 'NUMEXPRESSION'],
+		'<=': ['LOGICALCOMP', 'NUMEXPRESSION'],
+		'>': ['LOGICALCOMP', 'NUMEXPRESSION'],
+		'<': ['LOGICALCOMP', 'NUMEXPRESSION'],
+		';': ['ε']
+	},
+	'NUMOPSUM': {
+		'-': ['-'],
+		'+': ['+']
+	},
+	'NUMOPMULT': {
+		'%': ['%'],
+		'/': ['/'],
+		'*': ['*']
+	},
+	'NUMEXPRESSION': {
+		'ident': ['TERM', "NUMEXPRESSION'"],
+		'(': ['TERM', "NUMEXPRESSION'"],
+		'null': ['TERM', "NUMEXPRESSION'"],
+		'string_constant': ['TERM', "NUMEXPRESSION'"],
+		'float_constant': ['TERM', "NUMEXPRESSION'"],
+		'int_constant': ['TERM', "NUMEXPRESSION'"],
+		'-': ['TERM', "NUMEXPRESSION'"],
+		'+': ['TERM', "NUMEXPRESSION'"]
+	},
+	"NUMEXPRESSION'": {
+		')': ['ε'],
+		'-': ['NUMOPSUM', 'TERM', "NUMEXPRESSION'"],
+		'+': ['NUMOPSUM', 'TERM', "NUMEXPRESSION'"],
+		'!=': ['ε'],
+		'==': ['ε'],
+		'>=': ['ε'],
+		'<=': ['ε'],
+		'>': ['ε'],
+		'<': ['ε'],
+		';': ['ε'],
+		']': ['ε']
+	},
+	'TERM': {
+		'ident': ['UNARYEXPR', "TERM'"],
+		'(': ['UNARYEXPR', "TERM'"],
+		'null': ['UNARYEXPR', "TERM'"],
+		'string_constant': ['UNARYEXPR', "TERM'"],
+		'float_constant': ['UNARYEXPR', "TERM'"],
+		'int_constant': ['UNARYEXPR', "TERM'"],
+		'-': ['UNARYEXPR', "TERM'"],
+		'+': ['UNARYEXPR', "TERM'"]
+	},
+	"TERM'": {
+		')': ['ε'],
+		'%': ['NUMOPMULT', 'UNARYEXPR', "TERM'"],
+		'/': ['NUMOPMULT', 'UNARYEXPR', "TERM'"],
+		'*': ['NUMOPMULT', 'UNARYEXPR', "TERM'"],
+		'-': ['ε'],
+		'+': ['ε'],
+		'!=': ['ε'],
+		'==': ['ε'],
+		'>=': ['ε'],
+		'<=': ['ε'],
+		'>': ['ε'],
+		'<': ['ε'],
+		';': ['ε'],
+		']': ['ε']
+	},
+	'UNARYEXPR': {
+		'ident': ['FACTOR'],
+		'(': ['FACTOR'],
+		'null': ['FACTOR'],
+		'string_constant': ['FACTOR'],
+		'float_constant': ['FACTOR'],
+		'int_constant': ['FACTOR'],
+		'-': ['NUMOPSUM', 'FACTOR'],
+		'+': ['NUMOPSUM', 'FACTOR']
+	},
+	'FACTOR': {
+		'ident': ['LVALUE'],
+		'(': ['(', 'NUMEXPRESSION', ')'],
+		'null': ['null'],
+		'string_constant': ['string_constant'],
+		'float_constant': ['float_constant'],
+		'int_constant': ['int_constant']
+	},
+	'LVALUE': {
+		'ident': ['ident', "LVALUE'"]
+	},
+	"LVALUE'": {
+		')': ['ε'],
+		'%': ['ε'],
+		'/': ['ε'],
+		'*': ['ε'],
+		'-': ['ε'],
+		'+': ['ε'],
+		'!=': ['ε'],
+		'==': ['ε'],
+		'>=': ['ε'],
+		'<=': ['ε'],
+		'>': ['ε'],
+		'<': ['ε'],
+		';': ['ε'],
+		'=': ['ε'],
+		']': ['ε'],
+		'[': ['ARRAYSIZEEXP']
+	}
+}
